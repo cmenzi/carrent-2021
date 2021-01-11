@@ -18,6 +18,10 @@ namespace CarRent
 
         public static IHostBuilder CreateHostBuilder(string[] args)
         {
+            int x = 2;
+
+            Console.WriteLine(x);
+
             return Host.CreateDefaultBuilder(args)
                        .ConfigureWebHostDefaults(webBuilder =>
                        {
