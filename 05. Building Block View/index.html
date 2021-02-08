@@ -1,0 +1,917 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.8">
+    
+    
+      
+        <title>05. Building Block View - Car Rent!</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.cb6bc1d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.39b8e14a.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-block-view" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Car Rent!" class="md-header-nav__button md-logo" aria-label="Car Rent!">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            Car Rent!
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              05. Building Block View
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Car Rent!" class="md-nav__button md-logo" aria-label="Car Rent!">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Car Rent!
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Car Rent
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01.%20Introduction%20and%20Goals/" class="md-nav__link">
+        01. Introduction and Goals
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.%20Architecture%20Constraints/" class="md-nav__link">
+        02. Architecture Constraints
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.%20Context%20and%20scope/" class="md-nav__link">
+        03. Context and scope
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.%20Solution%20Strategy/" class="md-nav__link">
+        04. Solution Strategy
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          05. Building Block View
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        05. Building Block View
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whitebox-overall-system" class="md-nav__link">
+    Whitebox Overall System
+  </a>
+  
+    <nav class="md-nav" aria-label="Whitebox Overall System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-1" class="md-nav__link">
+    &lt;Name black box 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-2" class="md-nav__link">
+    &lt;Name black box 2&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-n" class="md-nav__link">
+    &lt;Name black box n&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-interface-1" class="md-nav__link">
+    &lt;Name interface 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-interface-m" class="md-nav__link">
+    &lt;Name interface m&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2" class="md-nav__link">
+    Level 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-1" class="md-nav__link">
+    White Box &lt;building block 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-2" class="md-nav__link">
+    White Box &lt;building block 2&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-m" class="md-nav__link">
+    White Box &lt;building block m&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3" class="md-nav__link">
+    Level 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-x1_" class="md-nav__link">
+    White Box &lt;_building block x.1_&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-x2_" class="md-nav__link">
+    White Box &lt;_building block x.2_&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-y1_" class="md-nav__link">
+    White Box &lt;_building block y.1_&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06.%20Runtime%20View/" class="md-nav__link">
+        06. Runtime View
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07.%20Deployment%20View/" class="md-nav__link">
+        07. Deployment View
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08.%20Crosscutting%20Concepts/" class="md-nav__link">
+        08. Crosscutting Concepts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09.%20Architecture%20Decisions/" class="md-nav__link">
+        09. Architecture Decisions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10.%20Quality%20Requirements/" class="md-nav__link">
+        10. Quality Requirements
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11.%20Risks%20and%20Technical%20Debt/" class="md-nav__link">
+        11. Risks and Technical Debt
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12.%20Glossary/" class="md-nav__link">
+        12. Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../About%20arc42/" class="md-nav__link">
+        About arc42
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#whitebox-overall-system" class="md-nav__link">
+    Whitebox Overall System
+  </a>
+  
+    <nav class="md-nav" aria-label="Whitebox Overall System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-1" class="md-nav__link">
+    &lt;Name black box 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-2" class="md-nav__link">
+    &lt;Name black box 2&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-black-box-n" class="md-nav__link">
+    &lt;Name black box n&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-interface-1" class="md-nav__link">
+    &lt;Name interface 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name-interface-m" class="md-nav__link">
+    &lt;Name interface m&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-2" class="md-nav__link">
+    Level 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-1" class="md-nav__link">
+    White Box &lt;building block 1&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-2" class="md-nav__link">
+    White Box &lt;building block 2&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-building-block-m" class="md-nav__link">
+    White Box &lt;building block m&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-3" class="md-nav__link">
+    Level 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Level 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-x1_" class="md-nav__link">
+    White Box &lt;_building block x.1_&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-x2_" class="md-nav__link">
+    White Box &lt;_building block x.2_&gt;
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#white-box-_building-block-y1_" class="md-nav__link">
+    White Box &lt;_building block y.1_&gt;
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="building-block-view">Building Block View</h1>
+<p><strong>Content.</strong></p>
+<p>The building block view shows the static decomposition of the system
+into building blocks (modules, components, subsystems, classes,
+interfaces, packages, libraries, frameworks, layers, partitions, tiers,
+functions, macros, operations, datas structures, …) as well as their
+dependencies (relationships, associations, …)</p>
+<p>This view is mandatory for every architecture documentation. In analogy
+to a house this is the <em>floor plan</em>.</p>
+<p><strong>Motivation.</strong></p>
+<p>Maintain an overview of your source code by making its structure
+understandable through abstraction.</p>
+<p>This allows you to communicate with your stakeholder on an abstract
+level without disclosing implementation details.</p>
+<p><strong>Form.</strong></p>
+<p>The building block view is a hierarchical collection of black boxes and
+white boxes (see figure below) and their descriptions.</p>
+<p><img alt="Hierarchy of building blocks" src="../images/05_building_blocks-EN.png" /></p>
+<p><strong>Level 1</strong> is the white box description of the overall system together
+with black box descriptions of all contained building blocks.</p>
+<p><strong>Level 2</strong> zooms into some building blocks of level 1. Thus it contains
+the white box description of selected building blocks of level 1,
+together with black box descriptions of their internal building blocks.</p>
+<p><strong>Level 3</strong> zooms into selected building blocks of level 2, and so on.</p>
+<h2 id="whitebox-overall-system">Whitebox Overall System</h2>
+<p>Here you describe the decomposition of the overall system using the
+following white box template. It contains</p>
+<ul>
+<li>
+<p>an overview diagram</p>
+</li>
+<li>
+<p>a motivation for the decomposition</p>
+</li>
+<li>
+<p>black box descriptions of the contained building blocks. For these
+    we offer you alternatives:</p>
+<ul>
+<li>
+<p>use <em>one</em> table for a short and pragmatic overview of all
+    contained building blocks and their interfaces</p>
+</li>
+<li>
+<p>use a list of black box descriptions of the building blocks
+    according to the black box template (see below). Depending on
+    your choice of tool this list could be sub-chapters (in text
+    files), sub-pages (in a Wiki) or nested elements (in a modeling
+    tool).</p>
+</li>
+</ul>
+</li>
+<li>
+<p>(optional:) important interfaces, that are not explained in the
+    black box templates of a building block, but are very important for
+    understanding the white box. Since there are so many ways to specify
+    interfaces why do not provide a specific template for them. In the
+    worst case you have to specify and describe syntax, semantics,
+    protocols, error handling, restrictions, versions, qualities,
+    necessary compatibilities and many things more. In the best case you
+    will get away with examples or simple signatures.</p>
+</li>
+</ul>
+<p><strong><em>&lt;Overview Diagram&gt;</em></strong></p>
+<p>Motivation</p>
+<p>:   <em>&lt;text explanation&gt;</em></p>
+<p>Contained Building Blocks</p>
+<p>:   <em>&lt;Description of contained building block (black boxes)&gt;</em></p>
+<p>Important Interfaces</p>
+<p>:   <em>&lt;Description of important interfaces&gt;</em></p>
+<p>Insert your explanations of black boxes from level 1:</p>
+<p>If you use tabular form you will only describe your black boxes with
+name and responsibility according to the following schema:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Responsibility</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black Box 1</td>
+<td> <em>&lt;Text&gt;</em></td>
+</tr>
+<tr>
+<td>Black Box 2</td>
+<td> <em>&lt;Text&gt;</em></td>
+</tr>
+</tbody>
+</table>
+<p>If you use a list of black box descriptions then you fill in a separate
+black box template for every important building block . Its headline is
+the name of the black box.</p>
+<h3 id="name-black-box-1">&lt;Name black box 1&gt;</h3>
+<p>Here you describe &lt;black box 1&gt; according the the following black
+box template:</p>
+<ul>
+<li>
+<p>Purpose/Responsibility</p>
+</li>
+<li>
+<p>Interface(s), when they are not extracted as separate paragraphs.
+    This interfaces may include qualities and performance
+    characteristics.</p>
+</li>
+<li>
+<p>(Optional) Quality-/Performance characteristics of the black box,
+    e.g.availability, run time behavior, ….</p>
+</li>
+<li>
+<p>(Optional) directory/file location</p>
+</li>
+<li>
+<p>(Optional) Fulfilled requirements (if you need traceability to
+    requirements).</p>
+</li>
+<li>
+<p>(Optional) Open issues/problems/risks</p>
+</li>
+</ul>
+<p><em>&lt;Purpose/Responsibility&gt;</em></p>
+<p><em>&lt;Interface(s)&gt;</em></p>
+<p><em>&lt;(Optional) Quality/Performance Characteristics&gt;</em></p>
+<p><em>&lt;(Optional) Directory/File Location&gt;</em></p>
+<p><em>&lt;(Optional) Fulfilled Requirements&gt;</em></p>
+<p><em>&lt;(optional) Open Issues/Problems/Risks&gt;</em></p>
+<h3 id="name-black-box-2">&lt;Name black box 2&gt;</h3>
+<p><em>&lt;black box template&gt;</em></p>
+<h3 id="name-black-box-n">&lt;Name black box n&gt;</h3>
+<p><em>&lt;black box template&gt;</em></p>
+<h3 id="name-interface-1">&lt;Name interface 1&gt;</h3>
+<p>…</p>
+<h3 id="name-interface-m">&lt;Name interface m&gt;</h3>
+<h2 id="level-2">Level 2</h2>
+<p>Here you can specify the inner structure of (some) building blocks from
+level 1 as white boxes.</p>
+<p>You have to decide which building blocks of your system are important
+enough to justify such a detailed description. Please prefer relevance
+over completeness. Specify important, surprising, risky, complex or
+volatile building blocks. Leave out normal, simple, boring or
+standardized parts of your system</p>
+<h3 id="white-box-building-block-1">White Box <em>&lt;building block 1&gt;</em></h3>
+<p>…describes the internal structure of <em>building block 1</em>.</p>
+<p><em>&lt;white box template&gt;</em></p>
+<h3 id="white-box-building-block-2">White Box <em>&lt;building block 2&gt;</em></h3>
+<p><em>&lt;white box template&gt;</em></p>
+<p>…</p>
+<h3 id="white-box-building-block-m">White Box <em>&lt;building block m&gt;</em></h3>
+<p><em>&lt;white box template&gt;</em></p>
+<h2 id="level-3">Level 3</h2>
+<p>Here you can specify the inner structure of (some) building blocks from
+level 2 as white boxes.</p>
+<p>When you need more detailed levels of your architecture please copy this
+part of arc42 for additional levels.</p>
+<h3 id="white-box-_building-block-x1_">White Box &lt;_building block x.1_&gt;</h3>
+<p>Specifies the internal structure of <em>building block x.1</em>.</p>
+<p><em>&lt;white box template&gt;</em></p>
+<h3 id="white-box-_building-block-x2_">White Box &lt;_building block x.2_&gt;</h3>
+<p><em>&lt;white box template&gt;</em></p>
+<h3 id="white-box-_building-block-y1_">White Box &lt;_building block y.1_&gt;</h3>
+<p><em>&lt;white box template&gt;</em></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../04.%20Solution%20Strategy/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                04. Solution Strategy
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../06.%20Runtime%20View/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                06. Runtime View
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.18f0862e.min.js"></script>
+      <script src="../assets/javascripts/bundle.994580cf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.9c0e82ba.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
