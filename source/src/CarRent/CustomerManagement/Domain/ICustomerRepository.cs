@@ -5,16 +5,10 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    public interface ICustomerRepository
+    using CarRent.Common.Domain;
+
+    public interface ICustomerRepository : IRepository<Customer, Guid>
     {
-        Customer FindById(int id);
-
         IEnumerable<Customer> FindByName(string name);
-
-        void Add(Customer customer);
-
-        void Remove(Customer customer);
-
-        void Remove(int id);
     }
 }

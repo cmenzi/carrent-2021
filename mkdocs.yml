@@ -1,0 +1,13 @@
+site_name: Car Rent!
+theme:
+  name: material
+
+markdown_extensions:
+  - pymdownx.highlight:
+      linenums: true
+        
+plugins:
+    - mermaid2
+
+extra_javascript:
+    - https://unpkg.com/mermaid/dist/mermaid.min.js

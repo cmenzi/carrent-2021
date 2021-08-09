@@ -32,8 +32,8 @@ namespace CarRent
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "CarRent", Version = "v1" });
             });
 
-            services.AddTransient<ICustomerService, CustomerService>();
-            services.AddSingleton<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

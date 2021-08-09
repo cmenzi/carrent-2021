@@ -1,6 +1,7 @@
 namespace CarRent.Tests
 {
     using System;
+    using CarRent.CustomerManagement.Api;
     using Xunit;
 
     public class UnitTest1
@@ -8,7 +9,16 @@ namespace CarRent.Tests
         [Fact]
         public void Test1()
         {
-            Assert.True(false);
+            // Arrange
+
+            var c = new CustomerController(null);
+
+            // Act
+            var result = c.Get(1);
+
+            // Assert
+
+            Assert.NotNull(result);
         }
     }
 }

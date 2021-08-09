@@ -2,12 +2,12 @@
 
 namespace CarRent.CustomerManagement.Api
 {
-    using CarRent.CustomerManagement.Application;
-    using Microsoft.AspNetCore.Mvc;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+    using CarRent.CustomerManagement.Application;
+    using Microsoft.AspNetCore.Mvc;
 
     [Route("api/[controller]")]
     [ApiController]
